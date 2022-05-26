@@ -1,0 +1,42 @@
+.Parent01 {
+    display: flex;
+    padding: 20px;
+    flex-direction: row;
+}
+
+.child1 {
+    padding: 15px;
+    width: 50%;
+    height: 100vh;
+    text-align: left;
+    align-items: center;
+    color: #F5BB43;
+}
+
+.child2 {
+    width: 50%;
+    
+    height: 100vh;
+}
+.slogan {
+    padding-top: 55px;
+    font-family: 'Red Hat Display Bold', sans-serif;
+    font-size: 54px;
+  }
+.slogan00 {
+    padding-bottom: 10px;
+    font-family: 'Red Hat Display', sans-serif;
+    font-size: 24px;
+    color: black;
+}
+.btn1{
+  background-color: #F54358;
+  color: white;
+  border-radius: 30px;
+  border: 0px;
+  font-family: 'Red Hat Display', sans-serif;
+  font-size: 10px;
+  padding: 15px 60px;
+  margin: 15px 0px;
+  cursor: pointer;
+}
