@@ -2,13 +2,14 @@ import React from 'react'
 import Navbar from 'react-bootstrap/Navbar'
 import { Nav, Container } from "react-bootstrap";
 import logo from "../../assets/logo_JLM_op.png"
+
 function Header() {
   return (
 
     <>
   <Navbar bg="light" variant="light">
     <Container>
-    <Navbar.Brand href="#home">
+    <Navbar.Brand href="/">
     <img
         src={logo}
         width="35"
@@ -18,9 +19,10 @@ function Header() {
       />
     </Navbar.Brand>
     <Nav className="me-auto">
-      <Nav.Link href="#home">Acceuil</Nav.Link>
+      <Nav.Link href="/">Acceuil</Nav.Link>
       <Nav.Link href="#Formations">Formations</Nav.Link>
       <Nav.Link href="#offre">Offre de travail</Nav.Link>
+      <Nav.Link href="/account">Compte</Nav.Link>
     </Nav>
     </Container>
   </Navbar>
