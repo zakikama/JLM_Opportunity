@@ -105,7 +105,7 @@ function Login() {
             <p>Ville: {ville}</p>
             <p>Numero telephone: {tel}</p>
             <br></br>
-            <Button variant="danger btn-block" onClick={getdata}>Log OUT</Button>
+            <Button variant="danger btn-block" onClick={Logout}>Log OUT</Button>
           </Form>
         ) : (
           <div>
