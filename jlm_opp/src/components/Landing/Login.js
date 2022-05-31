@@ -32,7 +32,10 @@ function Login() {
     setuser(currentUser);
   });
 
-  
+  function clearall(){
+    setnom(null);setprenom(null);setage(null);setville(null);settel(null);settel(null);setemail(null);setpass(null);setuser(null);
+  }
+
 
   function Login() {
     signInWithEmailAndPassword(auth, email, pass)
@@ -47,6 +50,7 @@ function Login() {
 
   function Logout(){
     signOut(auth);
+    clearall();
   }
 
   function Register() {
@@ -68,15 +72,18 @@ function Login() {
       });
   }
 
-  async function getdata(){
-    const querySnapshot = await getDocs(collection(db, "Users"));
-    querySnapshot.forEach((doc) => {
-    setnom(doc.data().Nom);
-    setprenom(doc.data().Prenom);
-    setage(doc.data().Age);
-    setville(doc.data().Ville);
-    settel(doc.data().Tel);
-    });
+  async function getdata() {
+      const querySnapshot = await getDocs(collection(db, "Users"));
+      querySnapshot.forEach((doc) => {
+        console.log(doc.id == user.email);
+        if (doc.id == user.email) {
+          setnom(doc.data().Nom);
+          setprenom(doc.data().Prenom);
+          setage(doc.data().Age);
+          setville(doc.data().Ville);
+          settel(doc.data().Tel);
+        }
+      });
   }
 
   function noaccount() {
@@ -88,8 +95,9 @@ function Login() {
   }
   
   useEffect(() => {
-    console.log(user);
-    getdata();
+    if(user!=null){
+      getdata()
+    }
   }, [user]);
 
   return (
@@ -118,7 +126,6 @@ function Login() {
                     autoFocus
                     required
                     placeholder="Adresse email"
-                    value={email}
                     onChange={(e) => {
                       setemail(e.target.value);
                     }}
@@ -127,7 +134,6 @@ function Login() {
                 <Form.Group controlId="formBasicPassword">
                   <Form.Control
                     type="password"
-                    value={pass}
                     minLength={8}
                     onChange={(e) => {
                       setpass(e.target.value);
@@ -150,7 +156,6 @@ function Login() {
               <Form>
                 <Form.Control
                   type="text"
-                  value={nom}
                   onChange={(e) => {
                     setnom(e.target.value);
                   }}
@@ -159,7 +164,6 @@ function Login() {
                 ></Form.Control>
                 <Form.Control
                   type="text"
-                  value={prenom}
                   onChange={(e) => {
                     setprenom(e.target.value);
                   }}
@@ -168,7 +172,6 @@ function Login() {
                 ></Form.Control>
                 <Form.Control
                   type="number "
-                  value={age}
                   onChange={(e) => {
                     setage(e.target.value);
                   }}
@@ -177,7 +180,6 @@ function Login() {
                 ></Form.Control>
                 <Form.Control
                   type="text "
-                  value={ville}
                   onChange={(e) => {
                     setville(e.target.value);
                   }}
@@ -186,7 +188,6 @@ function Login() {
                 ></Form.Control>
                 <Form.Control
                   type="text"
-                  value={email}
                   onChange={(e) => {
                     setemail(e.target.value);
                   }}
@@ -195,7 +196,6 @@ function Login() {
                 ></Form.Control>
                 <Form.Control
                   type="password"
-                  value={pass}
                   minLength={8}
                   onChange={(e) => {
                     setpass(e.target.value);
@@ -205,7 +205,6 @@ function Login() {
                 ></Form.Control>
                 <Form.Control
                   type="number"
-                  value={tel}
                   onChange={(e) => {
                     settel(e.target.value);
                   }}

@@ -20,6 +20,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing/>}></Route>
           <Route path="/account" element={<Account/>}></Route>
+          <Route path="/Feed" element={<Feed/>}></Route>
+
         </Routes>
       </Router> */}
       <Login/>
