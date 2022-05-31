@@ -1,7 +1,11 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap');.App {
   text-align: center;
 }
-
+body {
+  width: 100%;
+  background-color: #61dafb;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,3 +40,4 @@
     transform: rotate(360deg);
   }
 }
+
